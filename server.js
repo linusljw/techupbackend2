@@ -17,10 +17,9 @@ app.use(express.urlencoded({extended: true}));
 
 // Needed for Prisma to connect to database
 const { PrismaClient } = require('@prisma/client')
-const prisma = new PrismaClient({
+const prisma = new PrismaClient();
   // Explicitly set tracing configuration
-  enableTracing: false
-})
+  //enableTracing: false
 
 // Main landing page
 app.get('/', async function(req, res) {
